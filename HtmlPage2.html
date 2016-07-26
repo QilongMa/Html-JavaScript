@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body onload="do_game()">
+    <script>
+        var color_array = ["Silver", "Gray", "Black", "Red", "Maroon", "Yellow", "Olive", "Lime", "Green", "Aqua", "Teal"];
+        var index_text;
+        var index = 0;
+        var target;
+        var finish = false;
+        var guesses = 0;
+        var guess;
+        function do_game() {
+            color_array.sort();
+            index_text = Math.random() * 11;
+            index = Math.floor(index_text);
+            target = color_array[index];
+            alert(target);
+            while (finish != true) {
+                guesses++;
+                guess = prompt("Enter the possible color? \n" + color_array.join(", "));
+                guess = guess[0].toUpperCase() + guess.substring(1).toLowerCase();
+                finish = check_color();
+            }
+            document.body.style.background = guess;
+        }
+        function check_color() {
+            if (guess == target) {
+                alert("Good job, " + guess + " is the answer!" + " You guessed " + guesses + " times");
+                return true;
+            }
+            var i = 0;
+            for ( ; i < color_array.length; i++) {
+                if (color_array[i] == guess) {
+                    break;
+                }
+            }
+            if (i >= color_array.length) {
+                alert("I don’t recognize that color!");
+                return false;
+            }
+            if (i > index) {
+                alert("Your input is alphabetically higher than mine!");
+                return false;
+            }
+            else {
+                alert("Your input is alphabetically lower than mine!");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
