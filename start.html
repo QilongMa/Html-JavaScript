@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
+    <!--<script type="text/javascript" src="scripts/util.js"></script>-->
+    <script type="text/javascript" src="scripts/auto.js"></script>
+    <link href="css/StyleSheet1.css" rel="stylesheet" />        
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div class="Model">
+        <table id="Gametable">
+            <tr>
+                <td id="1"></td>
+                <td id="2"></td>
+                <td id="3"></td>
+            </tr>
+            <tr>
+                <td id="4"></td>
+                <td id="5"></td>
+                <td id="6"></td>
+            </tr>
+            <tr>
+                <td id="7"></td>
+                <td id="8"></td>
+                <td id="9"></td>
+            </tr>
+        </table>
+        <br />
+        <div id="subdiv">
+            <p>Score Board</p>
+            <table id="scoretable">
+                <tr>
+                    <td>Player A</td>
+                    <td>Player B</td>
+                </tr>
+                <tr>
+                    <td id="pascore">0</td>
+                    <td id="pbscore">0</td>
+                </tr>
+            </table>
+            <button id="btnrestart" onclick="Restart()">Restart</button>
+            <button id="btnclear" onclick="ClearRecord()">Clear Record</button>
+        </div>
+    </div>
+</body>
+</html>
