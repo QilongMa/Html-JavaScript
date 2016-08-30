@@ -1,0 +1,46 @@
+<!Doctype  html>
+<head>
+    <style>
+        img{
+            position:absolute;
+        }
+        #leftside {
+            width: 500px;
+            height: 500px;
+            position: absolute;
+        }
+        #rightside{
+            width: 500px;
+            height: 500px;
+            left: 500px;
+            position: absolute;
+            border-left: 1px solid black;
+        }
+    </style>
+    
+</head>
+<body>
+    <h2>Click on the extra smiling face on the left</h2>
+    <div id="leftside"> </div>
+    <div id="rightside"> </div>
+    <script>
+        var theleftside = document.getElementById("leftside");
+        var numberOfFace = 5;
+        function generateFace(){
+            while(numberOfFace > 0){
+                create();
+                numberOfFace--;
+            }
+        }
+        function create(){
+            var img = document.createElement("img");
+            img.src = "smile.png";
+            img.style.top = Math.floor(Math.random() * 400) + "px";
+            img.style.left = Math.floor(Math.random() * 400) + "px";
+            img.style.width = 100 + "px";
+            img.style.height = 100 + "px";
+            theleftside.appendChild(img);
+        }
+        generateFace();
+    </script>
+</body>
